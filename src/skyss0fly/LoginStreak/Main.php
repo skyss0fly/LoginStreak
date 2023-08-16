@@ -37,7 +37,7 @@ $player = $event->getPlayer();
   }
 
 public function sendCommand(Player $player) {
-  $server = Server::getInstance();
+  $server = $this->getServer();
   $cfg = $this->getConfig();
 
   $cmd = $cfg->getNested("Rewards.1", ""); # set default if any.
