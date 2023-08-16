@@ -2,9 +2,9 @@ DeleteMe: true
 # please delete this value after configuration to allow this plugin to work
 
 StreakRewards:
+# add as many days as you want: Just follow the format
  1:
   Description: Joined for the first day:)
   Reward: 
-  # cmd
   - say {player} joined the Server, its their first streak
   - give {player} apple 1
