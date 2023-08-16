@@ -1,0 +1,6 @@
+name: LoginStreak
+main: skyss0fly\LoginStreak\Main
+version: 1.0.1
+api: 5.0.0
+author: skyss0fly
+description: A simple login streak plugin
