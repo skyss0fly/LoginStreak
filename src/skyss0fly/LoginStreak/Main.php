@@ -2,7 +2,7 @@
 
 namespace skyss0fly\LoginStreak;
 
-use pocketmine\{plugin\PluginBase, event\Listener, player\Player, console\command\CommandSender, event\player\PlayerJoinEvent};
+use pocketmine\{plugin\PluginBase, event\Listener, player\Player, console\CommandSender, event\player\PlayerJoinEvent};
 use skyss0fly\LoginStreak\StreakManager;
 
 class Main extends PluginBase implements Listener {
@@ -42,7 +42,7 @@ public function sendCommand(Player $player) {
 
   $cmd = $cfg->getNested("Rewards.1", ""); # set default if any.
   $cmd_result = str_replace("{player}", $player->getName(), $cmd);
-  $dispatch = $server->dispatchCommand(new ConsoleCommandSender($server, $server->getLanguage()), cmd_result);
+  $dispatch = $server->dispatchCommand(new ConsoleCommandSender($server, $server->getLanguage()), $cmd_result);
   
   }
 }
