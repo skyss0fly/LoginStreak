@@ -17,6 +17,22 @@ $this->saveDefaultConfig();
   public function onEnable(): void{
 $cfg = $this->getConfig();
 
-    if {!$cfg->get
+    if (!$cfg->get("DeleteMe")){
+      // null
+  }
+    else {
+      $this->getLogger()->warning("It appears that you have not configured this Plugin, for the safety of your server we will automatically turn this plugin off");
+      $this->getServer()->getPluginManager()->disablePlugin($this);
+      
+    }
+    
+}
+  public function onJoin($event PlayerJoinEvent) {
+$player = $event->getPlayer();
+    /* TODO: ADD LOGIC
+    Streak Manager
+    
+      */
+  
   }
 }
