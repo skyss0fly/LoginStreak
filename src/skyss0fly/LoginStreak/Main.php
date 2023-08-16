@@ -29,10 +29,8 @@ $cfg = $this->getConfig();
 }
   public function onJoin($event PlayerJoinEvent) {
 $player = $event->getPlayer();
-    /* TODO: ADD LOGIC
-    Streak Manager
     $change = $cfg->get("")->str_replace({player}, $player);
-      */
+    
   
   }
 }
