@@ -2,7 +2,7 @@
 
 namespace skyss0fly\LoginStreak;
 
-use pocketmine\{plugin\PluginBase, event\Listener, player\Player, console\CommandSender, event\player\PlayerJoinEvent};
+use pocketmine\{plugin\PluginBase, event\Listener, player\Player, console\ConsoleCommandSender, event\player\PlayerJoinEvent};
 use skyss0fly\LoginStreak\StreakManager;
 
 class Main extends PluginBase implements Listener {
