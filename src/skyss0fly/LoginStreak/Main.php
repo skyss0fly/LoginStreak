@@ -31,7 +31,7 @@ $cfg = $this->getConfig();
 $player = $event->getPlayer();
     /* TODO: ADD LOGIC
     Streak Manager
-    
+    $change = $cfg->get("")->str_replace({player}, $player);
       */
   
   }
