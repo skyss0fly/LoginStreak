@@ -29,7 +29,7 @@ $cfg = $this->getConfig();
 }
   public function onJoin($event PlayerJoinEvent) {
 $player = $event->getPlayer();
-    $change = $cfg->get("")->str_replace({player}, $player);
+    $change = $cfg->get("StreakRewards")->str_replace({player}, $player);
     
   
   }
