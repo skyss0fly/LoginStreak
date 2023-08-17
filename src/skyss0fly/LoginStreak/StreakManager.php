@@ -8,10 +8,10 @@ class StreakManager extends PluginBase {
 
 public function addStreak(Main $main, DateTime $time) {
  
-$player = $main->onJoin()->$player;
+$player = $main->onJoin($player);
  $pdata = $this->getData($pdata)l # set default if any.
 if (!$pdata->get($player->getName())){
-    $this->getLogger($player->getName . " data not found, creating one");
+    $this->getLogger()->info($player->getName . " data not found, creating one");
   $timenow = $time->getTimestamp();
   
   $pdatatoadd = $player->getName() . $timenow;
@@ -20,7 +20,7 @@ if (!$pdata->get($player->getName())){
 
 }
 else {
-$player = $main->onJoin()->$player;
+$player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   $timenow = $time->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
@@ -33,16 +33,16 @@ $player = $main->onJoin()->$player;
 }
 
 public function deductStreak(Main $main, DateTime $time) {
-$player = $main->onJoin()->$player;
+$player = $main->onJoin($player);
  $pdata = $this->getData($pdata); # set default if any.
   if (!$pdata->get($player->getName())) {
-    $this->getLogger($player->getName . " data not found, creating one");
+    $this->getLogger()->info($player->getName . " data not found, creating one");
   $timenow = $time->getTimestamp();
   $pdatatoadd = $player->getName() . $timenow;
   $this->getData($pdata->file_put_contents($pdatatoadd));
   }
   else{
-$player = $main->onJoin()->$player;
+$player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   $timenow = $time->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
@@ -53,7 +53,7 @@ $player = $main->onJoin()->$player;
   }
 }
 public function getData(Main $main) {
-$player = $main->onJoin()->$player;
+$player = $main->onJoin($player);
 $filePath = $this->getDataFolder("PlayerData");
   $data = file_get_contents($filePath);
 }
