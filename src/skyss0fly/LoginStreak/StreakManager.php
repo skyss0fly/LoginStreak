@@ -51,7 +51,7 @@ $player = $this->Main()->onJoin($player);
 }
 public function getData():void {
 $player = $this->Main()->onJoin($player);
-$filepath = $this->getDataFolder("PlayerData")->get("data");
+$filePath = $this->getDataFolder("PlayerData")->get("data");
   $data = file_get_contents($filePath);
 }
 }
