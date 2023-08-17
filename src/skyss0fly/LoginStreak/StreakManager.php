@@ -9,8 +9,7 @@ class StreakManager extends PluginBase {
 public function addStreak(Main $main, DateTime $time) {
  
 
-
-$player = $main->onJoin()->$player;
+$player = $main->onJoin($player);
  $pdata = $this->getData($pdata); # set default if any.
 
 if (!$pdata->get($player->getName())){
