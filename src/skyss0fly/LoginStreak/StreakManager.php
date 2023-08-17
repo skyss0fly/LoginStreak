@@ -12,7 +12,7 @@ if (!$pdata->get($player->getName())){
     $this->getLogger($player->getName . " data not found, creating one");
   $timenow = $this->DateTime()->getTimestamp();
   
-  $pdatatatoadd = $player->getName() . $timenow 
+  $pdatatatoadd = $player->getName() . $timenow;
 
   $this->getData($data->file_put_contents($pdatatoadd));
 
@@ -22,7 +22,7 @@ $player = $this->Main()->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   $timenow = $this->DateTime()->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
-  $pdatatatoadd = $player->getName() . $timenow . $streak + 1
+  $pdatatatoadd = $player->getName() . $timenow . $streak + 1;
 
   $this->getData($data->file_put_contents($pdatatoadd));
 
@@ -34,7 +34,7 @@ $player = $this->Main()->onJoin($player);
   if (!$pdata->get($player->getName())) {
     $this->getLogger($player->getName . " data not found, creating one");
   $timenow = $this->DateTime()->getTimestamp();
-  $pdatatatoadd = $player->getName() . $timenow 
+  $pdatatatoadd = $player->getName() . $timenow;
   $this->getData($data->file_put_contents($pdatatoadd));
   }
   else{
@@ -42,7 +42,7 @@ $player = $this->Main()->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   $timenow = $this->DateTime()->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
-  $pdatatatoadd = $player->getName() . $timenow . $streak = 0
+  $pdatatatoadd = $player->getName() . $timenow . $streak = 0;
 
   $this->getData($data->file_put_contents($pdatatoadd));
 
