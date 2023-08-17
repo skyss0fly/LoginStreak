@@ -54,3 +54,4 @@ $player = $this->Main()->onJoin($player);
 $filepath = $this->getDataFolder("PlayerData")->get("data");
   $data = file_get_contents($filePath);
 }
+}
