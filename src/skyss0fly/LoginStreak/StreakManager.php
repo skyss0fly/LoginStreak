@@ -6,7 +6,8 @@ use DateTime;
 class StreakManager {
 
 public function addStreak() {
-$player = $this->Main()->onJoin($player);
+ 
+$player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
 if (!$pdata->get($player->getName())){
     $this->getLogger($player->getName . " data not found, creating one");
@@ -18,7 +19,7 @@ if (!$pdata->get($player->getName())){
 
 }
 else {
-$player = $this->Main()->onJoin($player);
+$player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   $timenow = $this->DateTime()->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
@@ -30,7 +31,7 @@ $player = $this->Main()->onJoin($player);
 }
 
 public function deductStreak():void {
-$player = $this->Main()->onJoin($player);
+$player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   if (!$pdata->get($player->getName())) {
     $this->getLogger($player->getName . " data not found, creating one");
@@ -39,7 +40,7 @@ $player = $this->Main()->onJoin($player);
   $this->getData($data->file_put_contents($pdatatoadd));
   }
   else{
-$player = $this->Main()->onJoin($player);
+$player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   $timenow = $this->DateTime()->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
@@ -50,7 +51,7 @@ $player = $this->Main()->onJoin($player);
   }
 }
 public function getData():void {
-$player = $this->Main()->onJoin($player);
+$player = $main->onJoin($player);
 $filePath = $this->getDataFolder("PlayerData");
   $data = file_get_contents($filePath);
 }
