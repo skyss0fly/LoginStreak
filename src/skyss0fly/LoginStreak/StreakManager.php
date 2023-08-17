@@ -2,18 +2,19 @@
 
 namespace skyss0fly\LoginStreak;
 use skyss0fly\LoginStreak\Main;
+use pocketmine\plugin\PluginBase;
 use DateTime;
 class StreakManager {
 
-public function addStreak() {
+public function addStreak(Main $main, DateTime $time) {
  
 $player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
 if (!$pdata->get($player->getName())){
     $this->getLogger($player->getName . " data not found, creating one");
-  $timenow = $this->DateTime()->getTimestamp();
+  $timenow = $time->getTimestamp();
   
-  $pdatatatoadd = $player->getName() . $timenow;
+  $pdatatoadd = $player->getName() . $timenow;
 
   $this->getData($data->file_put_contents($pdatatoadd));
 
@@ -21,7 +22,7 @@ if (!$pdata->get($player->getName())){
 else {
 $player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
-  $timenow = $this->DateTime()->getTimestamp();
+  $timenow = $time->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
   $pdatatatoadd = $player->getName() . $timenow . $streak + 1;
 
@@ -30,19 +31,19 @@ $player = $main->onJoin($player);
 }
 }
 
-public function deductStreak():void {
+public function deductStreak(Main $main, DateTime $time) {
 $player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   if (!$pdata->get($player->getName())) {
     $this->getLogger($player->getName . " data not found, creating one");
-  $timenow = $this->DateTime()->getTimestamp();
+  $timenow = $time->getTimestamp();
   $pdatatoadd = $player->getName() . $timenow;
   $this->getData($data->file_put_contents($pdatatoadd));
   }
   else{
 $player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
-  $timenow = $this->DateTime()->getTimestamp();
+  $timenow = $time->getTimestamp();
   $streak = $this->getData($pdata)->$player->getName()->get("Streak");
   $pdatatoadd = $player->getName() . $timenow . $streak = 0;
 
@@ -50,7 +51,7 @@ $player = $main->onJoin($player);
 
   }
 }
-public function getData():void {
+public function getData(Main $main) {
 $player = $main->onJoin($player);
 $filePath = $this->getDataFolder("PlayerData");
   $data = file_get_contents($filePath);
