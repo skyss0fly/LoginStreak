@@ -5,7 +5,7 @@ use skyss0fly\LoginStreak\Main;
 use DateTime;
 class StreakManager {
 
-public function addStreak() {
+public function addStreak(Main $main) {
  
 $player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
@@ -30,7 +30,7 @@ $player = $main->onJoin($player);
 }
 }
 
-public function deductStreak():void {
+public function deductStreak(Main $main) {
 $player = $main->onJoin($player);
  $pdata = $this->getData()->getNested("", ""); # set default if any.
   if (!$pdata->get($player->getName())) {
@@ -50,7 +50,7 @@ $player = $main->onJoin($player);
 
   }
 }
-public function getData():void {
+public function getData(Main $main) {
 $player = $main->onJoin($player);
 $filePath = $this->getDataFolder("PlayerData");
   $data = file_get_contents($filePath);
