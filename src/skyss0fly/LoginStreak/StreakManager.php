@@ -27,6 +27,7 @@ $player = $this->Main()->onJoin($player);
   $this->getData($data->file_put_contents($pdatatoadd));
 
 }
+}
 
 public function deductStreak():void {
 $player = $this->Main()->onJoin($player);
