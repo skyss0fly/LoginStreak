@@ -33,7 +33,7 @@ $player = $event->getPlayer();
     $cfg = $this->getConfig();
 
     $change = $cfg->get("StreakRewards")->str_replace("{player}", $player);
-
+return $player;
   }
 
 public function sendCommand(Player $player) {
